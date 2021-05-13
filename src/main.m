@@ -28,7 +28,7 @@ D_i = 4.28571429e2;
 D_m = 5.010352e2;
 mu_e = 2e6;
 mu_i = 9.6273292e3;
-%-----------------ÎÞÁ¿¸Ù»¯-------------------%
+%-----------------nondimensionalize-------------------%
 D_e_bar = 9.42975626e3;
 D_i_bar = 5.05689074e-6;
 D_m_bar = 5.91191976e-6;
@@ -120,19 +120,28 @@ end
 
 x = x .* d;
 ne = ne .* n_s;
+%-----------------plot-------------------%
 figure(1);
 subplot(2,2,1);
 plot(x,ne);
+xlabel('x/cm');
+ylabel('Electric density/cm-3');
 title('ne');
 subplot(2,2,2);
 plot(x,Te);
 title('Te');
+xlabel('x/cm');
+ylabel('Electric temperature/eV');
 subplot(2,2,3);
 plot(x,V);
 title('V');
+xlabel('x/cm');
+ylabel('Electric potential/V');
 subplot(2,2,4);
 plot(x(1:n),E);
 title('E');
+xlabel('x/cm');
+ylabel('Electric field/V cm-1');
 
 
 
